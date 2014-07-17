@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Daddy Shopping List</title>
+	<link rel="stylesheet" href="css/shop.css">
+	<!--script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="js/shopapp.js"></script-->
+</head>
+<body>
+	<header>
+		<div id="topbox">
+			<h1>Dad's Shopping List</h1>
+		</div>		
+	</header>
+	<section id="content">
+		<form id="inputs">
+			<fieldset>
+				<legend>Enter Shopping List</legend>
+				<label for="budget" class="budget">
+					<span>Enter budget amount $:</span>
+					<input type="number" name="budget" id= "budget" placeholder="1000" autofocus>
+					<button type="button" id="budget">Enter Budget</button>
+				</label>
+				<label for="item" class="entry">
+					<select name="group">
+						<option value="Food" selected>Food</option>
+						<option value="Clothing">Clothing</option>
+						<option value="Shelter">Shelter</option>
+					</select>
+					<input type="text" name="entry" id="item" placeholder="Milk">
+					<button class="btn" type="button" id="item ">Enter Shopping Item</button>
+				</label>
+			</fieldset>
+		</form>
+		<div id="data">
+			<table id="Food" class="desk">
+				<caption>Food</caption>
+				<thead>
+			        <tr>
+			          <th>Item</th>
+			          <th>Bought</th>
+			          <th>Price $</th>
+			        </tr>
+		        </thead>
+		        <tbody>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Milk"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="5" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Spinach"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="7" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Butter"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="4" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Bread"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="3" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Spaghetti"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="2" disabled></td>
+			        </tr>
+		        </tbody>				
+			</table>
+			<table id="Clothing" class="desk">
+				<caption>Clothing</caption>
+				<thead>
+			        <tr>
+			          <th>Item</th>
+			          <th>Bought</th>
+			          <th>Price $</th>
+			        </tr>
+		        </thead>
+		        <tbody>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Stocking"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="6" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Baseball cap"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="12" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Pyjamas"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="25" disabled></td>
+			        </tr>
+		        </tbody>				
+			</table>
+			<table id="Shelter" class="desk">
+				<caption>Shelter</caption>
+				<thead>
+			        <tr>
+			          <th>Item</th>
+			          <th>Bought</th>
+			          <th>Price $</th>
+			        </tr>
+		        </thead>
+		        <tbody>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Chairs"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="25" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Toiletries"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="10" disabled></td>
+			        </tr>
+			        <tr>
+			          <td><input type="text" name="item" placeholder="Vacuum cleaner"></td>
+			          <td><input type="checkbox" value="No"></td>
+			          <td><input type="number" name="price" placeholder="300" disabled></td>
+			        </tr>
+		        </tbody>				
+			</table>
+			<button class="btn">Update Items</button>
+		</div>
+		<div id="totals">
+			<form>
+				<fieldset>
+					<legend>Breakdown</legend>
+					<label>
+						Food total:
+						<input type="text" name="total" placeholder="$300" disabled>
+					</label>
+					<label>
+						Clothes total:
+						<input type="text" name="total" placeholder="$500" disabled>
+					</label>
+					<label>
+						Shelter total:
+						<input type="text" name="total" placeholder="$100" disabled>
+					</label>
+				</fieldset>
+				<fieldset>
+					<legend>Totals</legend>
+					<label>
+						Amount Spent:
+						<input type="text" name="total" placeholder="$900" disabled>
+					</label>
+					<label>
+						Amount Left:
+						<input type="text" name="total" placeholder="$100" disabled>
+					</label>
+				</fieldset>
+			</form>
+		</div>	
+	</section>
+</body>
+</html>

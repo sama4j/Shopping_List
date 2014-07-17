@@ -1,0 +1,53 @@
+html, body {
+	min-width: 1280px;
+	max-width: 1600px;
+	min-height: 900px;
+	max-height: 1024px;
+}
+
+#topbox {
+	text-align: center;
+}
+
+#topbox h1 {
+	font-size: 2em;
+	padding: 0.5em;
+}
+
+/*div, #inputs, #content {
+	outline: 1px solid blue;
+}*/
+
+.desk {
+	border: 2px solid red;
+	vertical-align: top;
+}
+
+#data {
+	text-align: center;
+	margin: auto;
+	/*height: 500px;*/
+}
+#data table {
+	display: inline-block;
+	margin: 10px;
+}
+
+#data button {
+	display: block;
+	margin: 10px auto;
+}
+
+#inputs label {
+	margin: 20px;
+}
+
+#inputs, #totals {
+	text-align: center;
+}
+
+#data, fieldset {
+	border: 1px solid olive;
+	border-radius: 5px;
+	margin: 10px auto;
+}
