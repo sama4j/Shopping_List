@@ -34,7 +34,8 @@ $(document).ready(function() {
 	});
 
 	$('#data').on('click', '.btn', function() {
-		/*alert("hello");*/
+		/*alert($('#data #Food .insert tr').length);*/
+		/*alert($('#data #Food .insert #a3:nth-child(3)').val()); - doesn't work for n >1*/
 		var totalfood = $(this).parent().parent().find('#totals .ft');
 		var totalcloth = $(this).parent().parent().find('#totals .ct');
 		var totalshelt = $(this).parent().parent().find('#totals .st');
