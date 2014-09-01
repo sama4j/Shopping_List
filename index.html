@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Daddy Shopping List</title>
 	<link rel="stylesheet" href="css/shop.css">
-	<!--script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="js/shopapp.js"></script-->
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="js/shopapp.js"></script>
 </head>
 <body>
 	<header>
@@ -19,16 +19,17 @@
 				<legend>Enter Shopping List</legend>
 				<label for="budget" class="budget">
 					<span>Enter budget amount $:</span>
-					<input type="number" name="budget" id= "budget" placeholder="1000" autofocus>
+					<input type="number" name="budget" autofocus>
 					<button type="button" id="budget">Enter Budget</button>
 				</label>
 				<label for="item" class="entry">
-					<select name="group">
-						<option value="Food" selected>Food</option>
+					<select name="group" id="choose">
+						<option value=""></option>>
+						<option value="Food">Food</option>
 						<option value="Clothing">Clothing</option>
 						<option value="Shelter">Shelter</option>
 					</select>
-					<input type="text" name="entry" id="item" placeholder="Milk">
+					<input type="text" name="entry" id="item">
 					<button class="btn" type="button" id="item ">Enter Shopping Item</button>
 				</label>
 			</fieldset>
@@ -39,35 +40,15 @@
 				<thead>
 			        <tr>
 			          <th>Item</th>
-			          <th>Bought</th>
+			          <th>Delete</th>
 			          <th>Price $</th>
 			        </tr>
 		        </thead>
-		        <tbody>
+		        <tbody class="insert">
 			        <tr>
-			          <td><input type="text" name="item" placeholder="Milk"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="5" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Spinach"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="7" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Butter"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="4" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Bread"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="3" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Spaghetti"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="2" disabled></td>
+			          <td><input type="text" name="item"></td>
+			          <td><input id="a2" type="checkbox" value="No"></td>
+			          <td><input id="a3" type="number" name="price"></td-->
 			        </tr>
 		        </tbody>				
 			</table>
@@ -76,25 +57,15 @@
 				<thead>
 			        <tr>
 			          <th>Item</th>
-			          <th>Bought</th>
+			          <th>Delete</th>
 			          <th>Price $</th>
 			        </tr>
 		        </thead>
-		        <tbody>
+		        <tbody class="insert2">
 			        <tr>
-			          <td><input type="text" name="item" placeholder="Stocking"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="6" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Baseball cap"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="12" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Pyjamas"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="25" disabled></td>
+			          <td><input type="text" name="item"></td>
+			          <td><input id="a2" type="checkbox" value="No"></td>
+			          <td><input id="a3" type="number" name="price"></td>
 			        </tr>
 		        </tbody>				
 			</table>
@@ -103,25 +74,15 @@
 				<thead>
 			        <tr>
 			          <th>Item</th>
-			          <th>Bought</th>
+			          <th>Delete</th>
 			          <th>Price $</th>
 			        </tr>
 		        </thead>
-		        <tbody>
+		        <tbody class="insert3">
 			        <tr>
-			          <td><input type="text" name="item" placeholder="Chairs"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="25" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Toiletries"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="10" disabled></td>
-			        </tr>
-			        <tr>
-			          <td><input type="text" name="item" placeholder="Vacuum cleaner"></td>
-			          <td><input type="checkbox" value="No"></td>
-			          <td><input type="number" name="price" placeholder="300" disabled></td>
+			          <td><input type="text" name="item"></td>
+			          <td><input id="a2" type="checkbox" value="No"></td>
+			          <td><input id="a3" type="number" name="price"></td>
 			        </tr>
 		        </tbody>				
 			</table>
@@ -131,28 +92,29 @@
 			<form>
 				<fieldset>
 					<legend>Breakdown</legend>
-					<label>
-						Food total:
-						<input type="text" name="total" placeholder="$300" disabled>
+					<label class="ft">
+						Food total $:
+						<input id="foodt" type="number" name="total" disabled>
 					</label>
-					<label>
-						Clothes total:
-						<input type="text" name="total" placeholder="$500" disabled>
+					<label class="ct">
+						Clothes total $:
+						<input id="clot" type="number" name="total" disabled>
 					</label>
-					<label>
-						Shelter total:
-						<input type="text" name="total" placeholder="$100" disabled>
+					<label class="st">
+						Shelter total $:
+						<input id="shelt" type="number" name="total" disabled>
 					</label>
+					<p id="fixit">Sum of first and last entries only. Will fix soon</p>
 				</fieldset>
 				<fieldset>
 					<legend>Totals</legend>
-					<label>
-						Amount Spent:
-						<input type="text" name="total" placeholder="$900" disabled>
+					<label class="amt1">
+						Amount Spent $:
+						<input id="amt1f" type="text" name="total">
 					</label>
-					<label>
-						Amount Left:
-						<input type="text" name="total" placeholder="$100" disabled>
+					<label class="amt2">
+						Amount Left $:
+						<input id="amt2f" type="text" name="total">
 					</label>
 				</fieldset>
 			</form>

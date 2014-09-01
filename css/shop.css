@@ -3,6 +3,7 @@ html, body {
 	max-width: 1600px;
 	min-height: 900px;
 	max-height: 1024px;
+	background-color: #D0F5A9;
 }
 
 #topbox {
@@ -19,7 +20,7 @@ html, body {
 }*/
 
 .desk {
-	border: 2px solid red;
+	border: 2px solid #5E610B;
 	vertical-align: top;
 }
 
@@ -46,8 +47,50 @@ html, body {
 	text-align: center;
 }
 
-#data, fieldset {
+#data {
 	border: 1px solid olive;
 	border-radius: 5px;
 	margin: 10px auto;
+	background-color: #D8F781;
+}
+
+#totals label {
+	margin: auto 10px;
+}
+
+.ft, .ct, .st, .amt1, .amt2, #fixit {
+	display: none;
+}
+
+#fixit {
+	font: 16px "Comic Sans MS", cursive;
+	background-color: silver;
+	color: white;
+	text-align: center;
+	width: 60%;
+}
+
+.amt2 input {
+	border: none;
+	font-size: 20px;
+	font-family: Tahoma;
+	color: green;
+}
+
+.amt1 input {
+	border: none;
+	font-size: 20px;
+	font-family: Tahoma;
+	color: red;
+}
+
+caption {
+	font-size: 20px;
+	color: green;
+	font-family: Calibri;
+}
+
+form {
+	width: 70%;
+	margin: auto;
 }
