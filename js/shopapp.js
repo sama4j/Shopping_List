@@ -1,9 +1,10 @@
 $(document).ready(function() {
+	
 	$('#inputs').on('click','#budget', function() {
-		$(this).closest('#content').find('.amt1').show();
+		$('.amt1').show();
 		var money = +$('#inputs .budget input').val();
-		$(this).closest('#content').find('.amt2 input').val(money);
-		$(this).closest('#content').find('.amt2').show();
+		$('.amt2 input').val(money);
+		$('.amt2').show();
 	});
 
 	$('.entry').on('click', '.btn', function() {
@@ -12,7 +13,6 @@ $(document).ready(function() {
 		var col2 = $('<td><input id="a2" type="checkbox" value="No"></td>');
 		var col3 = $('<td><input id= "a3" type="number" name="price" placeholder="5"></td>');
 		if ($('select option:selected').val() == "Food") {
-			/*var enter1 = $('<td>'+listed+'</td>');*/
 			var enter1 = $('<td><input type="text" name="entry" id="item" value="'+listed+'"></td>');
 			$('#data #Food .insert').prepend(newrow);
 			$('#data #Food .insert tr:first').prepend(enter1, col2, col3);
@@ -34,40 +34,50 @@ $(document).ready(function() {
 	});
 
 	$('#data').on('click', '.btn', function() {
-		/*alert($('#data #Food .insert tr').length);*/
-		/*alert($('#data #Food .insert #a3:nth-child(3)').val()); - doesn't work for n >1*/
-		var totalfood = $(this).parent().parent().find('#totals .ft');
-		var totalcloth = $(this).parent().parent().find('#totals .ct');
-		var totalshelt = $(this).parent().parent().find('#totals .st');
-		var ed1 = +$('#data #Food .insert tr:first').find('#a3').val();
-		var ed2 = +$('#data #Food .insert tr:last').find('#a3').val();
-		$(totalfood).find('#foodt').val(ed1+ed2);
+		var foodRow = $('#data #Food .insert tr').length;
+		var clothRow = $('#data #Clothing .insert2 tr').length
+		var sheltRow = $('#data #Shelter .insert3 tr').length
 
-		var ed3 = +$('#data #Clothing .insert2 tr:first').find('#a3').val();
-		var ed4 = +$('#data #Clothing .insert2 tr:last').find('#a3').val();
-		$(totalcloth).find('#clot').val(ed3+ed4);
-
-		var ed5 = +$('#data #Shelter .insert3 tr:first').find('#a3').val();
-		var ed6 = +$('#data #Shelter .insert3 tr:last').find('#a3').val();
-		$(totalshelt).find('#shelt').val(ed5+ed6);
+		$('#foodt').val(totalFood(foodRow));
+		$('#clot').val(totalClothing(clothRow));
+		$('#shelt').val(totalShelter(sheltRow));
 		
-		var allT = ed1+ed2+ed3+ed4+ed5+ed6;
-		$(totalfood).show();
-		$(totalcloth).show();
-		$(totalshelt).show();
-		$(this).parent().parent().find('#totals #fixit').slideDown();
+		var one = +$('#foodt').val();
+		var two = +$('#clot').val();
+		var three = +$('#shelt').val()
+		var allT =  one + two + three;
+		$('.ft').show();
+		$('.ct').show();
+		$('.st').show();
 
-		$(this).parent().parent().find('#totals #amt1f').val(allT);
-		var left = +$(this).parent().parent().find('#totals #amt2f').val()
-		$(this).parent().parent().find('#totals #amt2f').val(left-allT)
-		/*
-		$(this).parent().parent().find('#totals .ft').show();
-		$(this).parent().parent().find('#totals .ct').show();
-		$(this).parent().parent().find('#totals .st').show();
-		*/
-
+		$('#totals #amt1f').val(allT);
+		var left = +$('#totals #amt2f').val()
+		$('#totals #amt2f').val(left-allT)
 
 	});
 
 });
 
+var totalFood = function(now) {
+	var sum = 0;
+	for (var i = 1; i <= now; i++) {
+		sum = +$('#data #Food .insert tr:nth-child('+i+') #a3').val() + sum;
+	};
+	return sum;
+}
+
+var totalClothing = function(now) {
+	var sum = 0;
+	for (var i = 1; i <= now; i++) {
+		sum = +$('#data #Clothing .insert2 tr:nth-child('+i+') #a3').val() + sum;
+	};
+	return sum;
+}
+
+var totalShelter = function(now) {
+	var sum = 0;
+	for (var i = 1; i <= now; i++) {
+		sum = +$('#data #Shelter .insert3 tr:nth-child('+i+') #a3').val() + sum;
+	};
+	return sum;
+}

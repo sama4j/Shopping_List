@@ -3,6 +3,7 @@ html, body {
 	max-width: 1600px;
 	min-height: 900px;
 	max-height: 1024px;
+	background-color: #D0F5A9;
 }
 
 #topbox {
@@ -46,10 +47,11 @@ html, body {
 	text-align: center;
 }
 
-#data, fieldset {
+#data {
 	border: 1px solid olive;
 	border-radius: 5px;
 	margin: 10px auto;
+	background-color: #D8F781;
 }
 
 #totals label {
@@ -86,4 +88,9 @@ caption {
 	font-size: 20px;
 	color: green;
 	font-family: Calibri;
+}
+
+form {
+	width: 70%;
+	margin: auto;
 }
